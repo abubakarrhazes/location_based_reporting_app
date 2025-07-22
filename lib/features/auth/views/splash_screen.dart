@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:location_based_reporting_app/core/const/app_assets.dart';
 import 'package:location_based_reporting_app/core/const/app_colors.dart';
 import 'package:location_based_reporting_app/core/const/app_sizes.dart';
+import 'package:location_based_reporting_app/core/widgets/brand_logo_widget.dart';
+import 'package:location_based_reporting_app/core/widgets/custom_primary_button.dart';
+import 'package:location_based_reporting_app/core/widgets/custom_text_button.dart';
+import 'package:location_based_reporting_app/features/auth/views/login_screen.dart';
+import 'package:location_based_reporting_app/features/auth/views/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -38,24 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      color: AppColors.primary,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppColors.primary.withOpacity(0.3),
-                          blurRadius: 20,
-                          spreadRadius: 5,
-                        ),
-                      ],
-                    ),
-                    child: Center(
-                      child: Image.asset(AppAssets.logo, width: 80, height: 80),
-                    ),
-                  ),
+                  BrandLogoWidget(),
                   SizedBox(height: 30),
                   Text(
                     'Fixaroo',
@@ -81,93 +69,45 @@ class _SplashScreenState extends State<SplashScreen> {
                   // Buttons
                   Column(
                     children: [
-                      SizedBox(
+                      CustomPrimaryButton(
+                        text: 'Log in or sign up',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
+                            ),
+                          );
+                        },
                         width: 200,
-                        height: 50,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) => LoginScreen(),
-                            //   ),
-                            // );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.primary,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                            elevation: 8,
-                          ),
-                          child: Text(
-                            'Log in or sign up',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                              fontFamily: 'TripSans-Regular',
-                            ),
-                          ),
-                        ),
                       ),
                       SizedBox(height: 15),
-                      SizedBox(
+                      CustomPrimaryButton(
+                        text: 'Complete signup',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => OnboardingScreen(),
+                            ),
+                          );
+                        },
                         width: 200,
-                        height: 50,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) => DashboardScreen(),
-                            //   ),
-                            // );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.primary,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                            elevation: 8,
-                          ),
-                          child: Text(
-                            'Complete signup',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                              fontFamily: 'TripSans-Regular',
-                            ),
-                          ),
-                        ),
                       ),
                       SizedBox(height: 30),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          TextButton(
+                          CustomTextButton(
+                            text: 'Login',
+                            textColor: Colors.white,
                             onPressed: () {},
-                            child: Text(
-                              'Login',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontFamily: 'TripSans-Regular',
-                              ),
-                            ),
                           ),
                           SizedBox(width: 20),
-                          TextButton(
+                          CustomTextButton(
+                            text: 'Admin',
+                            textColor: AppColors.textSecondary,
                             onPressed: () {},
-                            child: Text(
-                              'Admin',
-                              style: TextStyle(
-                                color: AppColors.textSecondary,
-                                fontSize: 16,
-                                fontFamily: 'TripSans-Regular',
-                              ),
-                            ),
                           ),
                         ],
                       ),

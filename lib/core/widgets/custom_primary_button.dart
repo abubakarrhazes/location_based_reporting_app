@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:location_based_reporting_app/core/const/app_colors.dart';
+
 class CustomPrimaryButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
@@ -41,8 +44,8 @@ class CustomPrimaryButton extends StatelessWidget {
         ),
         child: isLoading
             ? SizedBox(
-                width: 20,
-                height: 20,
+                width: width,
+                height: height,
                 child: CircularProgressIndicator(
                   strokeWidth: 2,
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
@@ -54,6 +57,7 @@ class CustomPrimaryButton extends StatelessWidget {
                   fontSize: fontSize,
                   fontWeight: fontWeight,
                   color: textColor,
+                  fontFamily: 'TripSans-Regular',
                 ),
               ),
       ),
