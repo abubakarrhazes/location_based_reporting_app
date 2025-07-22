@@ -3,6 +3,7 @@ import 'package:location_based_reporting_app/core/const/app_assets.dart';
 import 'package:location_based_reporting_app/core/const/app_colors.dart';
 import 'package:location_based_reporting_app/core/const/app_sizes.dart';
 import 'package:location_based_reporting_app/core/widgets/custom_app_bar.dart';
+import 'package:location_based_reporting_app/core/widgets/custom_icon_button.dart';
 import 'package:location_based_reporting_app/core/widgets/custom_primary_button.dart';
 import 'package:location_based_reporting_app/core/widgets/custom_text_button.dart';
 import 'package:location_based_reporting_app/core/widgets/report_card.dart';
@@ -16,6 +17,7 @@ class DashboardTab extends StatelessWidget {
       backgroundColor: AppColors.textPrimary,
       appBar: CustomAppBar(
         title: 'Dashboard',
+        
 
         textColor: AppColors.background,
         showLogo: true,
@@ -45,7 +47,7 @@ class DashboardTab extends StatelessWidget {
           bottom: AppSize.safeBlockHorizontal! * 7,
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Stack(
               children: [
@@ -61,15 +63,15 @@ class DashboardTab extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                // Positioned(
-                //   bottom: 16,
-                //   right: 16,
-                //   child: CustomIconButton(
-                //     icon: Icons.add,
-                //     size: 24,
-                //     onPressed: () {},
-                //   ),
-                // ),
+                Positioned(
+                  bottom: 16,
+                  right: 16,
+                  child: CustomIconButton(
+                    icon: Icons.arrow_right_alt,
+                    size: 24,
+                    onPressed: () {},
+                  ),
+                ),
               ],
             ),
             SizedBox(height: 24),

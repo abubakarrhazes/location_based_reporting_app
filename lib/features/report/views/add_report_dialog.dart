@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:location_based_reporting_app/core/const/app_assets.dart';
+import 'package:location_based_reporting_app/core/const/app_colors.dart';
 
 class AddReportDialog extends StatefulWidget {
   const AddReportDialog({Key? key}) : super(key: key);
@@ -13,7 +15,7 @@ class _AddReportDialogState extends State<AddReportDialog> {
   final _valueController = TextEditingController();
   final _photosController = TextEditingController();
 
-  String _selectedReportType = 'Incident';
+  String _selectedReportType = 'Dumped';
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class _AddReportDialogState extends State<AddReportDialog> {
             fontSize: 18,
             fontWeight: FontWeight.w600,
             color: Colors.black87,
+            fontFamily: 'TripSans-Regular',
           ),
         ),
         centerTitle: true,
@@ -53,6 +56,7 @@ class _AddReportDialogState extends State<AddReportDialog> {
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                       color: Colors.black87,
+                      fontFamily: 'TripSans-Regular',
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -61,30 +65,26 @@ class _AddReportDialogState extends State<AddReportDialog> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       _buildReportTypeIcon(
-                        Icons.report_problem_outlined,
-                        'Incident',
-                        'Incident',
+                        AppAssets.rubbishIcon,
+                        'Dumped',
+                        'Dumped',
                       ),
                       _buildReportTypeIcon(
-                        Icons.group_outlined,
-                        'Someone',
-                        'Someone',
+                        AppAssets.graffitiIcon,
+                        'Graffiti',
+                        'Graffiti',
                       ),
                       _buildReportTypeIcon(
-                        Icons.build_outlined,
-                        'Maintenance',
-                        'Maintenance',
+                        AppAssets.pedestrianIcon,
+                        'Pedestrian',
+                        'Pedestrian',
                       ),
                       _buildReportTypeIcon(
-                        Icons.description_outlined,
+                        AppAssets.trafficIcon,
                         'Traffic',
-                        'Traffic\nIncident',
+                        'Traffic',
                       ),
-                      _buildReportTypeIcon(
-                        Icons.info_outline,
-                        'Other',
-                        'Other',
-                      ),
+                      _buildReportTypeIcon(AppAssets.other, 'Other', 'Other'),
                     ],
                   ),
                   const SizedBox(height: 16),
@@ -94,6 +94,7 @@ class _AddReportDialogState extends State<AddReportDialog> {
                       fontSize: 13,
                       color: Colors.grey[600],
                       height: 1.4,
+                      fontFamily: 'TripSans-Regular',
                     ),
                   ),
                   const SizedBox(height: 32),
@@ -138,25 +139,32 @@ class _AddReportDialogState extends State<AddReportDialog> {
                       'Cancel',
                       style: TextStyle(
                         fontSize: 16,
-                        color: Colors.grey[600],
+                        color: AppColors.primary,
                         fontWeight: FontWeight.w500,
+                        fontFamily: 'TripSans-Regular',
                       ),
                     ),
                   ),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
-                  child: TextButton(
+                  child: ElevatedButton(
                     onPressed: () => Navigator.pop(context),
-                    style: TextButton.styleFrom(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[300],
                       padding: const EdgeInsets.symmetric(vertical: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      elevation: 0,
                     ),
-                    child: Text(
+                    child: const Text(
                       'Submit report',
                       style: TextStyle(
+                        color: Colors.white,
                         fontSize: 16,
-                        color: Colors.grey[600],
                         fontWeight: FontWeight.w500,
+                        fontFamily: 'TripSans-Regular',
                       ),
                     ),
                   ),
@@ -169,7 +177,7 @@ class _AddReportDialogState extends State<AddReportDialog> {
                       backgroundColor: Colors.green,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(50),
                       ),
                       elevation: 0,
                     ),
@@ -179,6 +187,7 @@ class _AddReportDialogState extends State<AddReportDialog> {
                         color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
+                        fontFamily: 'TripSans-Regular',
                       ),
                     ),
                   ),
@@ -191,7 +200,7 @@ class _AddReportDialogState extends State<AddReportDialog> {
     );
   }
 
-  Widget _buildReportTypeIcon(IconData icon, String type, String label) {
+  Widget _buildReportTypeIcon(String iconPath, String type, String label) {
     bool isSelected = _selectedReportType == type;
     return GestureDetector(
       onTap: () {
@@ -212,11 +221,17 @@ class _AddReportDialogState extends State<AddReportDialog> {
                 width: 1.5,
               ),
             ),
-            child: Icon(
-              icon,
+            child: Image.asset(
+              iconPath,
+              width: 32,
+              height: 32,
               color: isSelected ? Colors.white : Colors.grey[700],
-              size: 26,
             ),
+            //Icon(
+            //   icon,
+            //   color: isSelected ? Colors.white : Colors.grey[700],
+            //   size: 26,
+            // ),
           ),
           const SizedBox(height: 8),
           Text(
@@ -226,6 +241,8 @@ class _AddReportDialogState extends State<AddReportDialog> {
               fontSize: 11,
               color: Colors.grey[700],
               height: 1.2,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'TripSans-Regular',
             ),
           ),
         ],
@@ -248,6 +265,7 @@ class _AddReportDialogState extends State<AddReportDialog> {
             fontSize: 16,
             fontWeight: FontWeight.w500,
             color: Colors.black87,
+            fontFamily: 'TripSans-Regular',
           ),
         ),
         const SizedBox(height: 8),

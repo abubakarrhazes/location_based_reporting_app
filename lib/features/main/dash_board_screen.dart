@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:location_based_reporting_app/core/const/app_assets.dart';
 import 'package:location_based_reporting_app/core/const/app_colors.dart';
+import 'package:location_based_reporting_app/features/main/tabs/account_tab.dart';
 import 'package:location_based_reporting_app/features/main/tabs/dash_board_tab.dart';
+import 'package:location_based_reporting_app/features/main/tabs/report_map_tab.dart';
+import 'package:location_based_reporting_app/features/main/tabs/report_tab.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -13,9 +16,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   final List<Widget> _screens = [
     DashboardTab(),
-    // ReportListTab(),
-    // ReportMapTab(),
-    // AccountTab(),
+    ReportListTab(),
+    ReportMapTab(),
+    AccountTab(),
   ];
 
   @override
@@ -51,19 +54,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
               label: 'Report List',
             ),
             BottomNavigationBarItem(
-              icon: Image.asset(
-               AppAssets.reportMapIcon,
-                width: 24,
-                height: 24,
-              ),
+              icon: Image.asset(AppAssets.reportMapIcon, width: 24, height: 24),
               label: 'Report Map',
             ),
             BottomNavigationBarItem(
-              icon: Image.asset(
-                AppAssets.accountIcon,
-                width: 24,
-                height: 24,
-              ),
+              icon: Image.asset(AppAssets.accountIcon, width: 24, height: 24),
               label: 'Account',
             ),
           ],
