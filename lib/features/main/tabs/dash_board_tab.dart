@@ -6,6 +6,7 @@ import 'package:location_based_reporting_app/core/widgets/custom_app_bar.dart';
 import 'package:location_based_reporting_app/core/widgets/custom_primary_button.dart';
 import 'package:location_based_reporting_app/core/widgets/custom_text_button.dart';
 import 'package:location_based_reporting_app/core/widgets/report_card.dart';
+import 'package:location_based_reporting_app/features/report/views/add_report_dialog.dart';
 
 class DashboardTab extends StatelessWidget {
   @override
@@ -119,7 +120,12 @@ class DashboardTab extends StatelessWidget {
             SizedBox(height: 20),
             CustomPrimaryButton(
               text: 'Add report',
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AddReportDialog(),
+                );
+              },
               width: double.infinity,
             ),
           ],
