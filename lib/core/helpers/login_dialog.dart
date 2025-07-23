@@ -32,7 +32,7 @@ class LoginConfirmDialog extends StatelessWidget {
                 fontSize: 14,
                 color: Colors.black54,
                 height: 1.4,
-                fontFamily: 'TripSans-Regular',
+                fontFamily: 'TripSans-Regular'
               ),
             ),
             SizedBox(height: 25),

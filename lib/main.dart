@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: RoutesEntry.dashBoardScreen,
+        initialRoute: RoutesEntry.initialRoute,
         onGenerateRoute: AppRoutes.onGenerate,
       ),
     );

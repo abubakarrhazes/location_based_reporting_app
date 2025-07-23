@@ -96,14 +96,21 @@ class _SplashScreenState extends State<SplashScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           CustomTextButton(
+                            bgColor: AppColors.primary,
                             text: 'Login',
+
                             textColor: Colors.white,
-                            onPressed: () {},
+                            onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              RoutesEntry.dashBoardScreen,
+                              (route) => false,
+                            ),
                           ),
                           SizedBox(width: 20),
                           CustomTextButton(
+                            bgColor: AppColors.textPrimary,
                             text: 'Admin',
-                            textColor: AppColors.textSecondary,
+                            textColor: AppColors.primary,
                             onPressed: () {},
                           ),
                         ],

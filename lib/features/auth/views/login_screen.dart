@@ -72,15 +72,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 CustomPrimaryButton(
                   text: 'Send login link',
                   onPressed: () {
-                    // showDialog(
-                    //   context: context,
-                    //   builder: (context) => LoginConfirmDialog(),
-                    // );
                     if (_emailController.text.isNotEmpty) {
-                      Navigator.pushNamedAndRemoveUntil(
-                        context,
-                        RoutesEntry.dashBoardScreen,
-                        (route) => false,
+                      showDialog(
+                        context: context,
+                        builder: (context) => LoginConfirmDialog(),
                       );
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
