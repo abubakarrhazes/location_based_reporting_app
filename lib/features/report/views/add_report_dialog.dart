@@ -87,7 +87,7 @@ class _AddReportDialogState extends State<AddReportDialog> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    // Report Type Icons
+                   
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [

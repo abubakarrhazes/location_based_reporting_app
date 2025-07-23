@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:location_based_reporting_app/core/routes/app_routes.dart';
 import 'package:location_based_reporting_app/core/routes/routes_entry.dart';
+import 'package:location_based_reporting_app/features/report/views/edit_report_screen.dart';
 
 void main() {
   runApp(const MyApp());
