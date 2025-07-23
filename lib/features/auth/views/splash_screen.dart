@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:location_based_reporting_app/core/const/app_assets.dart';
 import 'package:location_based_reporting_app/core/const/app_colors.dart';
 import 'package:location_based_reporting_app/core/const/app_sizes.dart';
+import 'package:location_based_reporting_app/core/routes/routes_entry.dart';
 import 'package:location_based_reporting_app/core/widgets/brand_logo_widget.dart';
 import 'package:location_based_reporting_app/core/widgets/custom_primary_button.dart';
 import 'package:location_based_reporting_app/core/widgets/custom_text_button.dart';
@@ -72,11 +73,9 @@ class _SplashScreenState extends State<SplashScreen> {
                       CustomPrimaryButton(
                         text: 'Log in or sign up',
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushNamed(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => LoginScreen(),
-                            ),
+                            RoutesEntry.loginAccount,
                           );
                         },
                         width: 200,
@@ -85,11 +84,9 @@ class _SplashScreenState extends State<SplashScreen> {
                       CustomPrimaryButton(
                         text: 'Complete signup',
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushNamed(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => OnboardingScreen(),
-                            ),
+                            RoutesEntry.createAccount,
                           );
                         },
                         width: 200,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:location_based_reporting_app/features/auth/views/splash_screen.dart';
+import 'package:location_based_reporting_app/core/routes/app_routes.dart';
+import 'package:location_based_reporting_app/core/routes/routes_entry.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +17,8 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        // theme: LightTheme.theme, // Use LightTheme here
-        // darkTheme: DarkTheme.theme, // Use DarkTheme here
-        // themeMode: themeProvider.themeMode, // Set theme mode dynamically
-        home: SplashScreen(),
+        initialRoute: RoutesEntry.dashBoardScreen,
+        onGenerateRoute: AppRoutes.onGenerate,
       ),
     );
   }

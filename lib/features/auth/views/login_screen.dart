@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:location_based_reporting_app/core/const/app_colors.dart';
 import 'package:location_based_reporting_app/core/const/app_sizes.dart';
 import 'package:location_based_reporting_app/core/helpers/login_dialog.dart';
+import 'package:location_based_reporting_app/core/routes/app_routes.dart';
+import 'package:location_based_reporting_app/core/routes/routes_entry.dart';
 import 'package:location_based_reporting_app/core/widgets/brand_logo_widget.dart';
 import 'package:location_based_reporting_app/core/widgets/custom_app_bar.dart';
 import 'package:location_based_reporting_app/core/widgets/custom_primary_button.dart';
@@ -75,11 +77,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     //   builder: (context) => LoginConfirmDialog(),
                     // );
                     if (_emailController.text.isNotEmpty) {
-                      Navigator.pushAndRemoveUntil(
+                      Navigator.pushNamedAndRemoveUntil(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => DashboardScreen(),
-                        ),
+                        RoutesEntry.dashBoardScreen,
                         (route) => false,
                       );
                       ScaffoldMessenger.of(context).showSnackBar(
