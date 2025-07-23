@@ -1,16 +1,63 @@
-# location_based_reporting_app
+#  Location-Based Reporting App
 
-A new Flutter project.
+This is a simplified location-based reporting mobile application built with Flutter. The app enables users to log in, submit incident reports with categorized descriptions, attach media (images or videos), and specify the report location using an address or interactive map.
 
-## Getting Started
+## Features
+- User Authentication 
 
-This project is a starting point for a Flutter application.
+- User Dashboard
 
-A few resources to get you started if this is your first Flutter project:
+- User Profile
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Report Submission
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Title & description
+
+- Category selection
+
+- Location input (map pin or typed address)
+
+- Media attachment (camera or gallery)
+
+- View Past Submissions
+
+## Project Approach
+
+- Built using Flutter with Clean Architecture principles.
+
+- Geolocator and geocoding packages are used for address and coordinate translation.
+
+- Modular UI components and best Flutter practices.
+
+
+
+##  Tech Stack and Dev Packages
+
+- Flutter
+
+- Geolocator & Geocoding
+
+- Permission Handler
+
+- Flutter ScreenUtil
+
+- Image Picker
+
+- Path Provider
+
+
+
+##  Setup Instructions
+
+1. Clone the repository
+
+git clone https://github.com/yourusername/location-reporting-app.git
+cd location-reporting-app
+
+2. Install dependencies
+
+flutter pub get
+
+3. Run the app
+
+flutter run
