@@ -46,6 +46,14 @@ This is a simplified location-based reporting mobile application built with Flut
 - Path Provider
 
 
+##  ScreenShots 
+
+
+![](screenshots/Screenshot_1753267433.png) | ![](screenshots/Screenshot_1753267455.png) | ![](screenshots/Screenshot_1753267470.png) |   ![](screenshots/Screenshot_1753267482.png) |  ![](screenshots/Screenshot_1753267496.png) |  ![](screenshots/Screenshot_1753267702.png) | ![](screenshots/Screenshot_1753267505.png) | ![](screenshots/Screenshot_1753267731.png) | ![](screenshots/Screenshot_1753267702.png) | 
+
+
+
+
 
 ##  Setup Instructions
 
